@@ -3,7 +3,7 @@
     "outDir": "lib",
     "module": "commonjs",
     "target": "esnext",
-    "lib": ["dom", "esnext"],
+    "lib": ["esnext"],
     "experimentalDecorators": true,
     "removeComments": true,
     "sourceMap": true,
