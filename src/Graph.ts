@@ -1,11 +1,6 @@
-import { EdgeMap } from "./types";
+import { Graph, State } from "./types";
 
-export interface State {
-  nodes: string[];
-  edges: EdgeMap;
-}
-
-export const create = (defaultState?: State) => {
+export const create = (defaultState?: State): Graph => {
   const state: State = defaultState || {
     nodes: [],
     edges: {},
@@ -73,7 +68,10 @@ export const create = (defaultState?: State) => {
     };
   };
 
-  const createGraphByFilteredFunc = (sourceFilter?: (source: string) => boolean, edgeFilter?: (source: string, target?: string) => boolean) => {
+  const createGraphByFilteredFunc = (
+    sourceFilter?: (source: string) => boolean,
+    edgeFilter?: (source: string, target?: string) => boolean,
+  ): Graph => {
     const nodes = state.nodes.filter(source => {
       // sourceをフィルタリング
       return sourceFilter ? sourceFilter(source) : true;
@@ -104,7 +102,7 @@ export const create = (defaultState?: State) => {
    * nodeNameに紐づくNodeとEdgeからGraphを作成する
    * @param sources
    */
-  const createGraphBySources = (sources: string[]) => {
+  const createGraphBySources = (sources: string[]): Graph => {
     const newState: State = sources.reduce<State>(
       (total, source) => {
         total.edges[source] = getEdgeNameList(source);
@@ -118,7 +116,7 @@ export const create = (defaultState?: State) => {
   /**
    * 現在のgraphのcloneを作成する
    */
-  const clone = () => {
+  const clone = (): Graph => {
     const cloneState: State = JSON.parse(JSON.stringify(state));
     return create(cloneState);
   };
@@ -135,7 +133,7 @@ export const create = (defaultState?: State) => {
       .map(entry => entry[0]);
   };
 
-  const createReverseGraph = () => {
+  const createReverseGraph = (): Graph => {
     const reverseGraph = create({ nodes: state.nodes, edges: {} });
     Object.entries(state.edges).forEach(([source, targets]) => {
       (targets || []).forEach(target => {
@@ -237,4 +235,4 @@ export const create = (defaultState?: State) => {
   };
 };
 
-export type Type = ReturnType<typeof create>;
+export type Type = Graph;
