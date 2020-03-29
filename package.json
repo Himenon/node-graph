@@ -45,10 +45,9 @@
     "server": "node ./lib/server.js",
     "start": "yarn develop",
     "test": "yarn cruiser && yarn test:jest",
-    "test:ci": "yarn test && codecov",
+    "test:ci": "yarn test",
     "test:jest": "jest -c ./jest.config.js",
-    "test:watch": "yarn test:jest --watch",
-    "version_up": "lerna version --yes"
+    "test:watch": "yarn test:jest --watch"
   },
   "husky": {
     "hooks": {
@@ -69,7 +68,6 @@
     "@types/node": "^13.7.1",
     "@typescript-eslint/eslint-plugin": "^2.20.0",
     "@typescript-eslint/parser": "^2.20.0",
-    "codecov": "^3.6.5",
     "dependency-cruiser": "^7.2.0",
     "eslint": "^6.8.0",
     "eslint-plugin-import": "^2.20.1",
@@ -80,7 +78,6 @@
     "husky": "^4.2.3",
     "jest": "^25.1.0",
     "jest-cli": "^25.1.0",
-    "lerna": "^3.20.2",
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
     "rimraf": "^3.0.2",
