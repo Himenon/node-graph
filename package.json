@@ -1,7 +1,7 @@
 {
   "name": "@himenon/graph",
   "version": "0.0.1",
-  "description": "node library template",
+  "description": "Basics of Graph Theory library",
   "keywords": [
     "graph"
   ],

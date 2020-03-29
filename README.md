@@ -1,23 +1,9 @@
-# node-lib-template
+# @himenon/graph
 
 ## Usage
 
-```sh
-yarn
-yarn start
-```
-
-## Update
-
-```sh
-yarn outdated
-yarn upgrade
-```
-
-## Publish
-
-```
-yarn publish
+```bash
+yarn add @himenon/graph
 ```
 
 ## License
