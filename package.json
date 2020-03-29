@@ -1,6 +1,6 @@
 {
   "name": "@himenon/graph",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Basics of Graph Theory library",
   "keywords": [
     "graph"
