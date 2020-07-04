@@ -78,7 +78,7 @@
     "husky": "4.2.3",
     "jest": "25.2.3",
     "jest-cli": "25.2.3",
-    "lint-staged": "10.0.10",
+    "lint-staged": "10.2.11",
     "prettier": "2.0.2",
     "rimraf": "3.0.2",
     "sort-package-json": "1.40.0",
